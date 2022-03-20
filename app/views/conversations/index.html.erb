@@ -2,7 +2,8 @@
 <ul>
     <% @conversations.each do |conversation| %>
       <li>
-        <a href="/conversations/<%= conversation.id %>"><%= conversation.title %></a>
+        <a href="<%= conversation_path(conversation) %>"><%= conversation.title %></a>
       </li>
     <% end %>
 </ul>
+<a href="<%= new_conversation_path %>">New Converation</a>
