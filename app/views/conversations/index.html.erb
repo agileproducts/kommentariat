@@ -1,2 +1,8 @@
-<h1>Conversations#index</h1>
-<p>Find me in app/views/conversations/index.html.erb</p>
+<h1>Conversations</h1>
+<ul>
+    <% @conversations.each do |conversation| %>
+      <li>
+        <a href="/conversations/<%= conversation.id %>"><%= conversation.title %></a>
+      </li>
+    <% end %>
+</ul>
