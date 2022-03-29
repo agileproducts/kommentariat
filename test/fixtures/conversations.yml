@@ -1,9 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  body: MyText
+  title: Test One
+  body: First test conversation
 
 two:
-  title: MyString
-  body: MyText
+  title: Test Two
+  body: Second test conversation

@@ -19,6 +19,8 @@ Things you may want to cover:
 
 * How to run the test suite
 
+`bin/rails test`
+
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
