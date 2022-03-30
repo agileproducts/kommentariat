@@ -7,3 +7,7 @@ one:
 two:
   title: Test Two
   body: Second test conversation
+
+markdown:
+  title: Some Markdown
+  body: "I am *emphasis* and **bold**"
