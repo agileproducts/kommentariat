@@ -1,9 +1,9 @@
 <h1>Conversations</h1>
-<ul>
+<ul class="list-group mb-3">
     <% @conversations.each do |conversation| %>
-      <li>
+      <li class="list-group-item">
         <a href="<%= conversation_path(conversation) %>"><%= conversation.title %></a>
       </li>
     <% end %>
 </ul>
-<a href="<%= new_conversation_path %>">New Converation</a>
+<a class="btn btn-primary" href="<%= new_conversation_path %>">Start a Converation</a>
