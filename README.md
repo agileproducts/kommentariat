@@ -1,28 +1,19 @@
-# README
+# Kommentariat
 
 A project to build an app which demonstrates commenting on or discussing a thing. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Install
 
-Things you may want to cover:
+```
+bundle install --without production
+rake db:migrate
+```
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
+## Test
 
 `bin/rails test`
 
-* Services (job queues, cache servers, search engines, etc.)
+## Run
 
-* Deployment instructions
+`rackup`
 
-* ...
