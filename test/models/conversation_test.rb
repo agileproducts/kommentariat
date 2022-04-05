@@ -11,5 +11,5 @@ class ConversationTest < ActiveSupport::TestCase
     conversation.body = "this is long enough"
     assert_not conversation.save, "saved conversation without a title"
   end
-  
+
 end
