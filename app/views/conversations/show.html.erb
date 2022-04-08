@@ -2,10 +2,33 @@
 
 <div class="bg-white p-3 mb-3 border border-secondary"><%== md_to_html(@conversation.body) %></div>
 
-<div>
-  <a class="btn btn-primary" href="<%= edit_conversation_path(@conversation) %>">Edit</a>
-  <%= link_to "Delete", conversation_path(@conversation), class: "btn btn-danger", data: {
-    turbo_method: :delete,
-    turbo_confirm: "Are you sure?"
-  } %>
+<div class="clearfix">
+  <div class="float-end">
+    <a class="btn btn-primary btn-sm" href="<%= edit_conversation_path(@conversation) %>">Edit</a>
+    <%= link_to "Delete", conversation_path(@conversation), class: "btn btn-danger btn-sm", data: {
+      turbo_method: :delete,
+      turbo_confirm: "Are you sure?"
+    } %> 
+  </div>
 </div>
+
+<% @conversation.comments.each do |comment| %>
+
+  <span><strong><%= comment.commenter %></strong> <%= comment.created_at %> </span>
+  <div class="bg-white p-3 mb-3 border border-secondary"><%= comment.body %></div>
+<% end %>
+
+<hr>
+
+<%= form_with model: [ @conversation, @conversation.comments.build ] do |form| %>
+<div class="mb-3">
+  <%= form.text_area :body, {class: "form-control", rows: "2", value: "Write a comment.."}%>
+</div>
+<div class="mb-3">
+  <%= form.label :commenter,  {class: "form-label"} %> 
+  <%= form.text_field :commenter, {class: "form-control"} %> 
+</div>
+<div class="mb-3">
+  <%= form.submit %>
+</div>
+<% end %>
