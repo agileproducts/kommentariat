@@ -1,0 +1,12 @@
+<%= form_with model: [ @conversation, @conversation.comments.build ] do |form| %>
+<div class="mb-3">
+  <%= form.text_area :body, {class: "form-control", rows: "2", value: "Write a comment.."}%>
+</div>
+<div class="mb-3">
+  <%= form.label :commenter,  {class: "form-label"} %> 
+  <%= form.text_field :commenter, {class: "form-control"} %> 
+</div>
+<div class="mb-3">
+  <%= form.submit %>
+</div>
+<% end %>
