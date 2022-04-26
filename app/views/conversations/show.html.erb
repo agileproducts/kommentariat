@@ -1,6 +1,6 @@
 <h1><%= @conversation.title %></h1>
 
-<div class="bg-white p-3 mb-3 border border-secondary"><%== md_to_html(@conversation.body) %></div>
+<div class="bg-white p-3 mb-3 border border-secondary"><%== MarkdownHelper.md_to_html(@conversation.body) %></div>
 
 <div class="clearfix">
   <div class="float-end">

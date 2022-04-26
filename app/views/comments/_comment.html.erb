@@ -1,2 +1,2 @@
 <span><strong><%= comment.commenter %></strong> <%= comment.created_at %> </span>
-<div class="bg-white p-3 mb-3 border border-secondary"><%= comment.body %></div>
+<div class="bg-white p-3 mb-3 border border-secondary"><%== MarkdownHelper.md_to_html(comment.body) %></div>
