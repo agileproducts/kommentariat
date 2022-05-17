@@ -1,8 +1,8 @@
-<%= form_with model: conversation do |form| %>
+<%= form_with model: @conversation do |form| %>
   <div class="mb-3">
     <%= form.label :title, {class: "form-label"} %><br>
     <%= form.text_field :title, {class: "form-control"} %>
-    <% conversation.errors.full_messages_for(:title).each do |message| %>
+    <% @conversation.errors.full_messages_for(:title).each do |message| %>
     <div><%= message %></div>
     <% end %>
   </div>
@@ -11,7 +11,7 @@
     <%= form.label :body, {class: "form-label"}  %><br>
     <%= form.text_area :body, {class: "form-control", rows: "5"}%>
     <div class="form-text">I support <a href="https://daringfireball.net/projects/markdown/">markdown</a></div>
-    <% conversation.errors.full_messages_for(:body).each do |message| %>
+    <% @conversation.errors.full_messages_for(:body).each do |message| %>
     <div><%= message %></div>
     <% end %>
   </div>

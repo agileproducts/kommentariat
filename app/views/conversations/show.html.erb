@@ -1,19 +1,26 @@
 <h1><%= @conversation.title %></h1>
 
-<div class="bg-white p-3 mb-3 border border-secondary"><%== MarkdownHelper.md_to_html(@conversation.body) %></div>
+<%= turbo_frame_tag @conversation do %>
+  <div class="bg-white p-3 mb-3 border border-secondary">
+    <%== MarkdownHelper.md_to_html(@conversation.body) %>
+  </div>
 
 <div class="clearfix">
   <div class="float-end">
-    <a class="btn btn-primary btn-sm" href="<%= edit_conversation_path(@conversation) %>">Edit</a>
+    <%= link_to "Edit", edit_conversation_path(@conversation), class: "btn btn-primary btn-sm"%>
     <%= link_to "Delete", conversation_path(@conversation), class: "btn btn-danger btn-sm", data: {
       turbo_method: :delete,
       turbo_confirm: "Are you sure?"
     } %> 
   </div>
 </div>
+<% end %>
 
 <%= render @conversation.comments %>
 
 <hr>
 
 <%= render 'comments/form' %>
+
+
+<%# app/views/todos/edit.html.erb %>

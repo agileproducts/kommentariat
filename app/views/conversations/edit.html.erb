@@ -1,3 +1,10 @@
-<h1>Edit Conversation</h1>
+<!--<h1>Edit Conversation</h1>-->
 
-<%=render "conversation_form", conversation: @conversation%>
+<%= turbo_frame_tag @conversation do %>
+  <%= render "conversation_form" %>
+
+  <%= link_to 'Cancel', conversation_path(@conversation) %>
+<% end %>
+
+<!--<%=render "conversation_form", conversation: @conversation%>-->
+

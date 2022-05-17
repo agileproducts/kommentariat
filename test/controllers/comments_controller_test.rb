@@ -18,4 +18,12 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
     assert_equal starting_count+1, Comment.count
   end
 
+  test "it should update a comment" do
+    post "#{conversation_path(@conversation)}/comments", params: { comment: @comment_params }
+    post "#{conversation_path(@conversation)}/comments", params: { comment: @comment_params }
+    cid = @conversation.comments[1].id
+    patch "#{conversation_path(@conversation)}/comments/#{cid}", params: {comment: {body: "New text"}}
+    assert_equal "New text", @conversation.comments[1].body
+  end
+
 end
